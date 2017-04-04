@@ -16,6 +16,8 @@ import java.util.Dictionary;
 
 public class TestingActivity extends AppCompatActivity {
 
+    DBManager dbManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +26,7 @@ public class TestingActivity extends AppCompatActivity {
         getSupportActionBar().hide(); //隱藏標題
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION); //隱藏狀態
 
+        dbManager = new DBManager(this);
 
         if (true){ updateQustionList(); }// [issue]應先查看有無本地清單
 
