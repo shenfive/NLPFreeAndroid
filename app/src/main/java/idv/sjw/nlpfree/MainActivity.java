@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
-        getSupportActionBar().hide(); //隱藏標題
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION); //隱藏狀態
+//        getSupportActionBar().hide(); //隱藏標題
+//        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION); //隱藏狀態
     }
 
     public void startTest(View v){

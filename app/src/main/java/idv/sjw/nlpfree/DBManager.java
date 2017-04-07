@@ -1,8 +1,11 @@
 package idv.sjw.nlpfree;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteQueryBuilder;
 import android.widget.Toast;
 
 /**
@@ -16,25 +19,25 @@ public class DBManager {
 
     static final String DBName = "nlpdb";
     static final String TableName = "qustionList";
+
+    static final String ColKey = "key";
+    static final String ColQustion = "qustion";
+    static final String ColA = "a";
+    static final String ColB = "b";
+    static final String ColC = "c";
+
+
     static final int DBVersion = 1 ;
 
     static final String CreadteDB = "CREATE TABLE IF NOT EXISTS \'" + TableName + "\'(" +
-            "\'key\' INTEGER,"+
-            "\'qustion\' TEXT,"+
-            "\'a\' TEXT,"+
-            "\'b\' TEXT,"+
-            "\'c\' TEXT,"+
+            "\'"+ColKey+"\' INTEGER,"+
+            "\'"+ColQustion+"\' TEXT,"+
+            "\'"+ColA+"\' TEXT,"+
+            "\'"+ColB+"\' TEXT,"+
+            "\'"+ColC+"\' TEXT,"+
             "PRIMARY KEY (\'key\')" +
             ")";
 
-//    CREATE TABLE `` (
-//            `key`	INTEGER,
-//            `qustion`	TEXT,
-//            `a`	TEXT,
-//            `b`	TEXT,
-//            `c`	TEXT,
-//    PRIMARY KEY(`key`)
-//);
 
     static class DatabaseHelperUser extends SQLiteOpenHelper{
         Context context;
@@ -47,7 +50,7 @@ public class DBManager {
         @Override
         public void onCreate(SQLiteDatabase db) {
             db.execSQL(CreadteDB);
-            Toast.makeText(context,"DBCreated",Toast.LENGTH_SHORT).show();
+
         }
 
         @Override
@@ -57,6 +60,20 @@ public class DBManager {
         }
     }
 
+    public long insertData(ContentValues contentValues){
+        long ID = sqlDB.insert(TableName,"",contentValues);
+        return ID;
+    }
+
+
+    //select qustion,a,b,c form Table
+    public Cursor query(String[] projection,String  selection,String[] selectionArgs, String sortOrder){
+        SQLiteQueryBuilder sqLiteQuery = new SQLiteQueryBuilder();
+        sqLiteQuery.setTables(TableName);
+        Cursor cursor;
+        cursor = sqLiteQuery.query(sqlDB, projection, selection,selectionArgs,null,null,sortOrder);
+        return cursor;
+    }
 
 
     public DBManager(Context context){

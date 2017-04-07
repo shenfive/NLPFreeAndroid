@@ -1,10 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg">
+    android:background="@drawable/bg"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp"
+    xmlns:vpadn="http://schemas.android.com/apk/lib/com.vpadn.ads">
 
+    <com.vpadn.ads.VpadnBanner
+        android:id="@+id/vpadnBannerXML"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        vpadn:adSize="SMART_BANNER"
+        vpadn:autoFresh="true"
+        vpadn:bannerId="8a8081825b18944f015b49a7d4023837"
+        vpadn:loadAdOnCreate="true"
+        vpadn:platform="TW"
+        app:layout_constraintHorizontal_bias="0.0" />
 
+    <TextView
+        android:id="@+id/qustionView"
+        android:layout_width="247dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Loading....."
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:onClick="aClick"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:onClick="aClick"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:onClick="aClick"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/vpadnBannerXML"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="43dp"
+        android:layout_height="59dp"
+        app:srcCompat="@drawable/projectclub"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp" />
 </android.support.constraint.ConstraintLayout>
