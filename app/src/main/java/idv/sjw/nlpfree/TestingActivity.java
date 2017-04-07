@@ -84,6 +84,7 @@ public class TestingActivity extends AppCompatActivity {
             Intent intent = new Intent(this,ResultActivity.class);
             intent.putExtra("userAnswers",userAnswers);
             startActivity(intent);
+            finish();
             return;
         }
 

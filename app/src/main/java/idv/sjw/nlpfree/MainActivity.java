@@ -26,4 +26,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,TestingActivity.class);
         startActivity(intent);
     }
+
+    public void goInfo(View v){
+        Intent intent = new Intent(this,InforActivity.class);
+        startActivity(intent);
+
+    }
 }
